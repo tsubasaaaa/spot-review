@@ -1,0 +1,82 @@
+.review-post{
+  height: 1000px;
+  width: 100%;
+  color: #7b6459;
+  &__box{
+    margin: 0 200px;
+    &__logo{
+      height: 100px;
+      text-align: center;
+    }
+    &__image{
+      height: 300px;
+      &__name{
+        height: 50px;
+        width: 200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      &__form{
+        height: 250px;
+        width: 600px;
+        margin: 0 auto;
+        background-color: #7b6459;
+      }
+    }
+    &__title{
+      height: 100px;
+      &__name{
+        height: 50px;
+        width: 200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      &__form{
+        height: 50px;
+        width: 600px;
+        margin: 0 auto;
+        background-color: #7b6459;
+      }
+    }
+    &__description{
+      height: 200px;
+      &__name{
+        height: 50px;
+        width: 200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      &__form{
+        height: 150px;
+        width: 600px;
+        margin: 0 auto;
+        background-color: #7b6459;
+      }
+    }
+    &__place{
+      height: 200px;
+      &__name{
+        height: 50px;
+        width: 200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      &__form{
+        height: 150px;
+        width: 600px;
+        margin: 0 auto;
+        background-color: #7b6459;
+      }
+    }
+    &__submit{
+      height: 50px;
+      width: 200px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 50px;
+      background-color: aquamarine;
+      // &__name{}
+      // &__form{}
+    }
+  }
+}
