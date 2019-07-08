@@ -1,0 +1,39 @@
+.review-list{
+  height: 100%;
+  width: 100%;
+  &__field{
+    width: 1240px;
+    margin: 0 auto;
+    &__logo{
+      height: 100px;
+      line-height: 100px;
+      font-size: 20px;
+      text-align: center;
+    }
+    &__list{
+      width: 980px;
+      margin: 0 auto;
+      &__content{
+        display: inline-block;
+        height: 350px;
+        width: 300px;
+        margin: 0 0 10px 10px;
+        border: 6px solid;
+        border-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+        border-image-slice: 1;
+        &__name{
+          float: left;
+        }
+        &__like{
+          float: right;
+        }
+        &__image{
+          clear: both;
+          height: 280px;
+          width: 285px;
+          background-color: black;
+        }
+      }
+    }
+  }
+}
