@@ -1,0 +1,75 @@
+.mypage{
+  height: 100%;
+  width: 100%;
+  &__field{
+    height: 100%;
+    width: 800px;
+    margin: 0 auto;
+    &__image{
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+      border: solid #e5033e;
+      margin: 0 auto;
+    }
+    &__content1{
+      height: 100px;
+      width: 100%;
+      &__nickname{
+        height: 100px;
+        width: 600px;
+        float: left;
+      }
+      &__like{
+        height: 50px;
+        width: 100px;
+        float: right;
+      }
+    }
+    &__content2{
+      height: 200px;
+      display: flex;
+      justify-content: space-between;
+      line-height: 30px;
+      &__list{
+        height: 30px;
+        position: relative;
+        display: inline-block;
+        padding: 0.25em 0.5em;
+        text-decoration: none;
+        color: #FFF;
+        background: #fd9535;/*色*/
+        border-radius: 4px;/*角の丸み*/
+        box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+        font-weight: bold;
+        border: solid 2px #d27d00;/*線色*/
+      }
+      &__like-list{
+        height: 30px;
+        position: relative;
+        display: inline-block;
+        padding: 0.25em 0.5em;
+        text-decoration: none;
+        color: #FFF;
+        background: #fd9535;/*色*/
+        border-radius: 4px;/*角の丸み*/
+        box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+        font-weight: bold;
+        border: solid 2px #d27d00;/*線色*/
+      }
+      &__configuration{
+        height: 30px;
+        position: relative;
+        display: inline-block;
+        padding: 0.25em 0.5em;
+        text-decoration: none;
+        color: #FFF;
+        background: #fd9535;/*色*/
+        border-radius: 4px;/*角の丸み*/
+        box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+        font-weight: bold;
+        border: solid 2px #d27d00;/*線色*/
+      }
+    }
+  }
+}
