@@ -1,0 +1,84 @@
+.devise{
+  height: 100%;
+  width: 600px;
+  margin: 0 auto;
+  &__logo{
+    position: relative;
+    // display: inline-block;
+    height: 100px;
+    width: 250px;
+    line-height: 100px;
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+    margin: 0 auto 50px;
+    &:before,&:after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      width: 45px;
+      height: 2px;
+      border-top: solid 1px black;
+      border-bottom: solid 1px black;
+    }
+    &:before{
+      left: 0;
+    }
+    &:after{
+      right: 0;
+    }
+  }
+  &__field{
+    width: 400px;
+    margin: 0 auto;
+    &__label{
+      margin: 20px 0 10px;
+    }
+    &__form{
+      width: 400px;
+    }
+  }
+  &__check{
+    width: 400px;
+    margin: 20px auto;
+  }
+  &__actions{
+    height: 60px;
+    width: 400px;
+    margin: 50px auto;
+    &__btn{
+      height: 60px;
+      width: 150px;
+      position: relative;
+      display: block;
+      padding: 0.25em 0.5em;
+      text-decoration: none;
+      background: #00BCD4;/*背景色*/
+      color: #00BCD4;/*=背景色*/
+      box-shadow: inset 0 2px 0 rgba(255,255,255,0.2);
+      border-bottom: solid 2px #118e9e;
+      border-radius: 4px;
+      font-weight: bold;
+      text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
+      margin: 0 auto;
+      // text-align: center;
+      font-size: 20px;
+    }
+  }
+}
+.devise-link__link{
+  display: block;
+  width: 400px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 auto;
+  text-decoration-line: none;
+  &:after{
+    content: "";
+    display: block;
+    height: 4px;
+    background: -webkit-linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+    background: linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+  }
+}
