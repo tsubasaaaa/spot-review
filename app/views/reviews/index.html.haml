@@ -1,7 +1,7 @@
 .header
   .header__rogo
     spot-review
-  .header__sign-up
+  = link_to destroy_user_session_path,method: :delete,class: "header__sign-up" do
     新規登録
   .header__rogin
     ログイン
