@@ -3,7 +3,8 @@
   width: 100%;
   color: #7b6459;
   &__box{
-    margin: 0 200px;
+    width: 600px;
+    margin: 0 auto;
     &__logo{
       height: 100px;
       text-align: center;
@@ -25,6 +26,7 @@
     }
     &__title{
       height: 100px;
+      
       &__name{
         height: 50px;
         width: 200px;
@@ -35,7 +37,6 @@
         height: 50px;
         width: 600px;
         margin: 0 auto;
-        background-color: #7b6459;
       }
     }
     &__description{
@@ -50,7 +51,6 @@
         height: 150px;
         width: 600px;
         margin: 0 auto;
-        background-color: #7b6459;
       }
     }
     &__place{
@@ -70,13 +70,46 @@
     }
     &__submit{
       height: 50px;
-      width: 200px;
-      margin: 0 auto;
-      text-align: center;
-      line-height: 50px;
-      background-color: aquamarine;
-      // &__name{}
-      // &__form{}
+      width: 100px;
+      margin: 50px auto;
+      display: block;
+      padding: 0.25em 0.5em;
+      text-decoration: none;
+      color: #FFF;
+      background: #03A9F4;
+      border: solid 1px #0f9ada;
+      border-radius: 4px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+      text-shadow: 0 1px 0 rgba(0,0,0,0.2);
     }
   }
 }
+// &:before{
+//   position: absolute;
+//   content: '';
+//   width: 100%;
+//   height: 4px;
+//   top:100%;
+//   left: 0;
+//   border-radius: 3px;
+//   background:#67c5ff;
+//   transition: .2s;
+// }
+// &:after{
+//   position: absolute;
+//   content: '';
+//   width: 100%;
+//   height: 4px;
+//   top:0;
+//   left: 0;
+//   border-radius: 3px;
+//   background:#67c5ff;
+//   transition: .2s;
+// }
+// &:hover:before{
+//   top: -webkit-calc(100% - 3px);
+//   top: calc(100% - 3px);
+// }
+// &:hover:after{
+//   top: 3px;
+// }
