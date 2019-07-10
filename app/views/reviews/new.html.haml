@@ -1,27 +1,26 @@
 .review-post
   .review-post__box
-    .review-post__box__logo
-      新規レビュー
-    .review-post__box__image
-      .review-post__box__image__name
-        %i.far.fa-images
-        画像
-      .review-post__box__image__form
-    .review-post__box__title
-      .review-post__box__title__name
-        %i.fas.fa-map-pin
-        場所の名前
-      .review-post__box__title__form
-    .review-post__box__description
-      .review-post__box__description__name
-        %i.far.fa-comment-alt
-        説明
-      .review-post__box__description__form
-    .review-post__box__place
-      .review-post__box__place__name
-        %i.fas.fa-location-arrow
-        場所
-      .review-post__box__place__form
-    .review-post__box__submit
-      %i.far.fa-paper-plane
-      投稿
+    = form_for @review do |f|
+      .review-post__box__logo
+        新規レビュー
+      .review-post__box__image
+        .review-post__box__image__name
+          %i.far.fa-images
+          画像
+        .review-post__box__image__form
+      .review-post__box__title
+        .review-post__box__title__name
+          %i.fas.fa-map-pin
+          場所の名前
+        = f.text_field :name, class: "review-post__box__title__form" 
+      .review-post__box__description
+        .review-post__box__description__name
+          %i.far.fa-comment-alt
+          説明
+        = f.text_area :text, class: "review-post__box__description__form"
+      .review-post__box__place
+        .review-post__box__place__name
+          %i.fas.fa-location-arrow
+          場所
+        .review-post__box__place__form
+      = f.submit "投稿",class: "review-post__box__submit"
