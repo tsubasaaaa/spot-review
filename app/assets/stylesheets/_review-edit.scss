@@ -1,0 +1,99 @@
+.review-edit{
+  height: 100%;
+  width: 100%;
+  &__content{
+    width: 800px;
+    margin: 50px auto 0;
+    &__name{
+      height: 50px;
+      text-align: center;
+      margin: 0 auto;
+    }
+    &__time{
+      height: 30px;
+      float: right;
+    }
+    &__image{
+      clear: both;
+      height: 200px;
+      background-color: aquamarine;
+    }
+    &__text{
+      height: 200px;
+      width: 800px;
+      &__form{
+        display: block;
+        margin: 10px auto;
+        height: 180px;
+        width: 780px;
+      }
+    }
+    &__address{
+      height: 50px;
+    }
+    &__map{
+      max-height: 350px;
+      width: 800px;
+      .show-edit__content__map__btn{
+        position: relative;
+        display: inline-block;
+        font-weight: bold;
+        padding: 12px 0 8px;
+        text-decoration: none;
+        color: #67c5ff;
+        transition: .4s;
+        margin-bottom: 10px;
+        &:before{
+          position: absolute;
+          content: '';
+          width: 100%;
+          height: 4px;
+          top:100%;
+          left: 0;
+          border-radius: 3px;
+          background:#67c5ff;
+          transition: .2s;
+        }
+        &:after{
+          position: absolute;
+          content: '';
+          width: 100%;
+          height: 4px;
+          top:0;
+          left: 0;
+          border-radius: 3px;
+          background:#67c5ff;
+          transition: .2s;
+        }
+        &:hover:before{
+          top: -webkit-calc(100% - 10px);
+          top: calc(100% - 10px);
+        }
+        &:hover:after{
+          top: 10px;
+        }
+      }
+      .show-edit__content__map__box{
+      }
+    }
+    &__btn{
+      height: 50px;
+      width: 400px;
+      margin: 50px auto;
+      text-align: center;
+      &__submit{
+        width: 100px;
+        line-height: 40px;
+        display: inline-block;
+        padding: 0.25em 0.5em;
+        text-decoration: none;
+        color: #FFF;
+        background: #fd9535;/*色*/
+        border-radius: 4px;/*角の丸み*/
+        box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+        font-weight: bold;
+        border: solid 2px #d27d00;/*線色*/
+      }
+    }
+  }
+}

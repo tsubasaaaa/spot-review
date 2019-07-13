@@ -1,0 +1,15 @@
+.review-edit
+  .review-edit__content
+    = form_for @review do |f|
+      .review-edit__content__name
+        = f.text_field :name, class: "review-edit__content__name__form" 
+      .review-edit__content__image
+      .review-edit__content__text
+        = f.text_area :text, class: "review-edit__content__text__form"
+      .review-edit__content__address
+        = @review.address
+      .review-edit__content__map
+        %a.show-edit__content__map__btn{href: "",data: {lat: @review.latitude,long: @review.longitude}}地図を表示
+        .show-edit__content__map__box
+      .review-edit__content__btn
+        = f.submit "変更する",class: "review-edit__content__btn__submit"

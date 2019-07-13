@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'reviews#index'
   # root 'users#index'
-  resources :reviews
+  resources :reviews do
+    collection do
+      get 'list'
+    end
+  end
   resources :users
 end
