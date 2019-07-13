@@ -35,6 +35,16 @@ class ReviewsController < ApplicationController
       redirect_to review_path(@review)
     end
   end
+
+  def destroy
+    if @review.user_id == current_user.id
+      @review.destroy
+      redirect_to list_reviews_path
+    else
+      redirect_to root_path
+    end
+  end
+  
   private
   def review_params
     params.require(:review).permit(
