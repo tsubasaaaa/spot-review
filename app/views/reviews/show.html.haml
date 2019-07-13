@@ -18,3 +18,5 @@
         一覧へ戻る
       = link_to edit_review_path(@review),class: "review-show__content__btn__edit" do
         編集をする
+      = link_to review_path(@review),method: :delete,class: "review-show__content__btn__edit" do
+        削除する
