@@ -1,0 +1,11 @@
+.header
+  .header__rogo
+    spot-review
+  - if user_signed_in?
+    = link_to destroy_user_session_path,method: :delete,class: "header__log-out" do
+      ログアウト
+  - else
+    = link_to new_user_registratio_path,class: "header__sign-up" do
+      新規登録
+    = link_to new_user_session_path,class: "header__rogin" do
+      ログイン
