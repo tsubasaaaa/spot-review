@@ -1,4 +1,10 @@
 $(function(){
+  function buildaddress(address){
+    var html = `<div>
+                  ${address}
+                </div>`
+      $('.review-post__box__place__form__address-box').append(html)
+  }
   $('.review-post__box__place__form__btn').click(function(e){
     // ユーザーの端末がGeoLocation APIに対応しているかの判定
     // 対応している場合
@@ -8,8 +14,41 @@ $(function(){
         function(pos){
           var lat = pos.coords.latitude;
           var long = pos.coords.longitude;
+          var latlng = {lat: parseFloat(pos.coords.latitude), lng: parseFloat(pos.coords.longitude)};
           $('.review-post__box__place__form__latitude').val(lat);
           $('.review-post__box__place__form__longitude').val(long);
+          // ジオコーダのコンストラクタ
+          var geocoder = new google.maps.Geocoder();
+
+          // Reverse Geocoding開始
+          geocoder.geocode({
+            // 緯度経度を指定
+            latLng: latlng
+          }, function(results, status){
+
+            // 成功
+            if (status == google.maps.GeocoderStatus.OK && results[0].geometry) {
+
+              // 住所フル
+              var address = results[0].formatted_address;
+
+              // 住所のコンポーネントを取得
+              // 以下の変数は今後用
+              var address_comp = results[0].address_components;
+              // 都道府県
+              var pref = address_comp[address_comp.length - 3].short_name;
+              // 市を取得
+              var city = address_comp[address_comp.length - 4].short_name;
+              // 区を取得
+              var ward = address_comp[address_comp.length - 5].short_name;
+
+              // 値を代入
+              $('.review-post__box__place__form__address').val(address);
+              // 結果を出力
+              buildaddress(address)
+
+            }
+          });
           var MyLatLng = new google.maps.LatLng(lat, long);
           var Options = {
           zoom: 15,      //地図の縮尺値

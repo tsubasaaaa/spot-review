@@ -22,7 +22,8 @@ class ReviewsController < ApplicationController
     :name,
     :text,
     :longitude,
-    :latitude).merge(user_id: current_user.id)
+    :latitude,
+    :address).merge(user_id: current_user.id)
   end
 
 end
