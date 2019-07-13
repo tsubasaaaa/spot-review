@@ -56,7 +56,6 @@ $(function(){
           mapTypeId: 'roadmap'   //地図の種類
           };
           var place = $(".review-post__box__place__form__map")[0];
-          $(".review-post__box__place__form")
           $(".review-post__box__place__form__map").css("height","300px","width","600px")
           var map = new google.maps.Map(place, Options);
           var marker = new google.maps.Marker({

@@ -1,10 +1,14 @@
 .header
   .header__rogo
     spot-review
-  = link_to destroy_user_session_path,method: :delete,class: "header__sign-up" do
-    新規登録
-  .header__rogin
-    ログイン
+  - if user_signed_in?
+    = link_to destroy_user_session_path,method: :delete,class: "header__log-out" do
+      ログアウト
+  - else
+    = link_to new_user_registratio_path,class: "header__sign-up" do
+      新規登録
+    = link_to new_user_session_path,class: "header__rogin" do
+      ログイン
 .main
   .main__content1
     .main__content1__rogo
@@ -23,13 +27,13 @@
     .main__content2__rogo
       新着レビュー
     .main__content2__list
-      .main__content2__list__one
-        ka
-      .main__content2__list__one
-      .main__content2__list__one
-      .main__content2__list__one
+      - @reviews.each do |review|
+        .main__content2__list__one
+          .main__content2__list__one__name
+            = review.name
+          .main__content2__list__one__image
 .hooter
-  .hooter__home
+  = link_to users_path,class: "hooter__home" do
     %i.fa.fa-home.fa-3x
     .hooter__home__text
       ホーム

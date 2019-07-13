@@ -1,0 +1,19 @@
+.review-edit
+  .review-show__content
+    .review-show__content__name
+      = @review.name
+    .review-show__content__time
+      = @review.updated_at.strftime("%Y-%m-%d %H:%M")
+    .review-show__content__image
+    .review-show__content__text
+      = @review.text
+    .review-show__content__address
+      = @review.address
+    .review-show__content__map
+      %a.show-edit__content__map__btn{href: "",data: {lat: @review.latitude,long: @review.longitude}}地図を表示
+      .show-edit__content__map__box
+    .review-show__content__btn
+      = link_to list_reviews_path,class: "review-show__content__btn__return" do
+        一覧へ戻る
+      = link_to edit_review_path(@review),class: "review-show__content__btn__edit" do
+        編集をする

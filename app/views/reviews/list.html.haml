@@ -1,0 +1,12 @@
+.review-list
+  .review-list__field
+    .review-list__field__logo
+      レビュー投稿一覧
+    .review-list__field__list
+      - @reviews.each do |review|
+        = link_to review_path(review),class: "review-list__field__list__content" do
+          .review-list__field__list__content__name
+            = review.name
+          .review-list__field__list__content__like
+            %i.far.fa-heart
+          .review-list__field__list__content__image
