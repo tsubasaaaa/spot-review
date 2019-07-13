@@ -23,4 +23,9 @@
           %i.fas.fa-location-arrow
           場所
         .review-post__box__place__form
+          .review-post__box__place__form__btn
+            位置情報を検索
+          = f.hidden_field :latitude,class: "review-post__box__place__form__latitude"
+          = f.hidden_field :longitude,class: "review-post__box__place__form__longitude"
+          .review-post__box__place__form__map
       = f.submit "投稿",class: "review-post__box__submit"
