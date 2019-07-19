@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    4.times{@review.images.build}
   end
   
   def create
@@ -52,7 +53,8 @@ class ReviewsController < ApplicationController
     :text,
     :longitude,
     :latitude,
-    :address).merge(user_id: current_user.id)
+    :address,
+    images_attributes:[:image]).merge(user_id: current_user.id)
   end
 
   def set_review
