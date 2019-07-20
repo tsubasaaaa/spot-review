@@ -28,13 +28,7 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    # @images = @review.images
     (4 - @review.images.size).times{@review.images.new}
-    # num = 4 - @review.images.length
-    # @new_images = []
-    # num.times do
-    # @new_images << @review.images.build
-    # end
   end
 
   def update
@@ -72,15 +66,6 @@ class ReviewsController < ApplicationController
     :latitude,
     :address,
     images_attributes:[:image]).merge(user_id: current_user.id)
-  end
-
-  def edit_params
-    params.require(:review).permit(
-    :name,
-    :text,
-    :longitude,
-    :latitude,
-    :address,).merge(user_id: current_user.id)
   end
 
   def set_review
