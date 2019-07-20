@@ -10,6 +10,7 @@
       text-align: center;
     }
     &__image{
+      clear: both;
       min-height: 80px;
       max-height: 400px;
       border-bottom: solid 1px black;
@@ -36,6 +37,7 @@
         }
       }
       &__supplement{
+        color: #7b6459;
         text-align: center;
       }
       &__box{

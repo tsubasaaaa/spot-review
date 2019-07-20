@@ -46,6 +46,7 @@ $(function() {
     file_reader.readAsDataURL(file);
     }
   });
+
   // 画像の削除
   $(document).on('click','.review-post__box__image__box__content__delete', function(e){
     e.preventDefault();
@@ -57,7 +58,16 @@ $(function() {
       $('.review-post__box__image__btn').attr('for', `review_images_attributes_${count}_image`)
     }else{
       // 既存の画像処理
-
+      var id = $(this).data('id');
+      if ($('#review_images_attributes_0_id').val() === ""){
+        $('#review_images_attributes_0_id').val(id);
+      }else if ($('#review_images_attributes_1_id').val() === ""){
+        $('#review_images_attributes_1_id').val(id);
+      }else if ($('#review_images_attributes_2_id').val() === ""){
+        $('#review_images_attributes_2_id').val(id);
+      }else if ($('#review_images_attributes_3_id').val() === ""){
+        $('#review_images_attributes_3_id').val(id);
+      }
     }
     var parent = $(this).parents('.review-post__box__image__box__content').remove();
     // 4枚目だった場合の処理
@@ -65,4 +75,21 @@ $(function() {
       $('.review-post__box__image__btn').css("display", "block");
     }
   });
+
+  // 画像の編集削除の際にformを空にする処理
+  $(window).on("load",function(){
+    if(document.URL.match(/edit/)){
+      $("#review_images_attributes_0_id").val("")
+      $("#review_images_attributes_0_id").attr("name", "delete[]")
+      $("#review_images_attributes_1_id").val("")
+      $("#review_images_attributes_1_id").attr("name", "delete[]")
+      $("#review_images_attributes_2_id").val("")
+      $("#review_images_attributes_2_id").attr("name", "delete[]")
+      $("#review_images_attributes_3_id").val("")
+      $("#review_images_attributes_3_id").attr("name", "delete[]")
+    }
+    if($(".review-post__box__image__box__content").length === 4){
+      $('.review-post__box__image__btn').css("display", "none");
+    }
+  })
 });
