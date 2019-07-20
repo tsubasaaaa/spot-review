@@ -2,7 +2,7 @@
   height: 100%;
   width: 100%;
   &__content{
-    width: 800px;
+    width: 832px;
     margin: 50px auto 0;
     &__name{
       height: 50px;
@@ -13,14 +13,10 @@
       height: 30px;
       float: right;
     }
-    &__image{
-      clear: both;
-      height: 200px;
-      background-color: aquamarine;
-    }
     &__text{
       height: 200px;
       width: 800px;
+      margin: 0 auto;
       &__form{
         display: block;
         margin: 10px auto;

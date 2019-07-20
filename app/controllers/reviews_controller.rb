@@ -13,7 +13,6 @@ class ReviewsController < ApplicationController
   
   def create
     @review = Review.new(review_params)
-    
     if @review.save
       redirect_to root_path
     else
@@ -29,10 +28,28 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    # @images = @review.images
+    (4 - @review.images.size).times{@review.images.new}
+    # num = 4 - @review.images.length
+    # @new_images = []
+    # num.times do
+    # @new_images << @review.images.build
+    # end
   end
 
   def update
-    if @review.update(review_params)
+    if @review.update(edit_params)
+      if params[:images].present?
+        params[:images].each do |i|
+          @image = @review.images.create(image: i)
+        end
+      end
+      if params[:delete].present?
+        params[:delete].each do |i|
+          @image = Image.find(i)
+          @image.delete
+        end
+      end
       redirect_to review_path(@review)
     end
   end
@@ -55,6 +72,15 @@ class ReviewsController < ApplicationController
     :latitude,
     :address,
     images_attributes:[:image]).merge(user_id: current_user.id)
+  end
+
+  def edit_params
+    params.require(:review).permit(
+    :name,
+    :text,
+    :longitude,
+    :latitude,
+    :address,).merge(user_id: current_user.id)
   end
 
   def set_review

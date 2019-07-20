@@ -4,7 +4,22 @@
     = form_for @review do |f|
       .review-edit__content__name
         = f.text_field :name, class: "review-edit__content__name__form" 
-      .review-edit__content__image
+      .review-edit__content__time
+        = @review.created_at.strftime("%Y-%m-%d %H:%M")
+      .review-post__box__image
+        %label.review-post__box__image__btn{for: "review_images_attributes_0_image"}
+          画像を選択
+          = f.fields_for :images do |i|
+            = i.file_field :image,name: "images[]", class: "review-post__box__image__btn__form"
+        .review-post__box__image__supplement
+          最大4枚までアップロードできます。
+        .review-post__box__image__box
+          - @review.images.each do |image|
+            - if image.image.present?
+              .review-post__box__image__box__content
+                = image_tag image.image.url, class: "review-post__box__image__box__content__image"
+                %a.review-post__box__image__box__content__delete{href: "" , "data-id": image.id}
+                  削除
       .review-edit__content__text
         = f.text_area :text, class: "review-edit__content__text__form"
       .review-edit__content__address

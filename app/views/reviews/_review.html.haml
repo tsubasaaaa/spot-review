@@ -1,0 +1,56 @@
+.review-post
+  .review-post__box
+    = form_for @review do |f|
+      .review-post__box__logo
+        新規レビュー
+      .review-post__box__image
+        %label.review-post__box__image__btn{for: "review_images_attributes_0_image"}
+          画像を選択
+          = f.fields_for :images do |i|
+            = i.file_field :image, class: "review-post__box__image__btn__form"
+        .review-post__box__image__supplement
+          最大4枚までアップロードできます。
+        .review-post__box__image__box
+          -# .review-post__box__image__box__content
+          -#   .review-post__box__image__box__content__image
+          -#     画像を
+          -#     %br 選択してください
+          -#   .review-post__box__image__box__content__delete
+      .review-post__box__title
+        .review-post__box__title__name
+          %i.fas.fa-map-pin
+          場所の名前
+        = f.text_field :name, class: "review-post__box__title__form" 
+      .review-post__box__description
+        .review-post__box__description__name
+          %i.far.fa-comment-alt
+          説明
+        = f.text_area :text, class: "review-post__box__description__form"
+      .review-post__box__place
+        .review-post__box__place__name
+          %i.fas.fa-location-arrow
+          場所
+        .review-post__box__place__form
+          .review-post__box__place__form__btn
+            位置情報を検索
+          = f.hidden_field :latitude,class: "review-post__box__place__form__latitude"
+          = f.hidden_field :longitude,class: "review-post__box__place__form__longitude"
+          = f.hidden_field :address, class: "review-post__box__place__form__address"
+          .review-post__box__place__form__address-box
+          .review-post__box__place__form__map
+      = f.submit "投稿",class: "review-post__box__submit"
+
+
+      -# .review-post__box__image
+      -#   .review-post__box__image__btn
+      -#     画像
+      -#   .review-post__box__image__supplement
+      -#     最大4枚までアップロードできます。
+      -#   = f.fields_for :images do |i|
+      -#     .review-post__box__image__box
+      -#       .review-post__box__image__box__image
+      -#         画像を
+      -#         %br 選択してください
+      -#       = i.label :image, class: "review-post__box__image__box__label",for: "review_images_attributes_0_image" do
+      -#         選択
+      -#         = i.file_field :image, class: "review-post__box__image__box__label__form"
