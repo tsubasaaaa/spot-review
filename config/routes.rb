@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :reviews do
     collection do
       get 'list'
+      get 'search'
+      get 'search-result'
     end
   end
   resources :users

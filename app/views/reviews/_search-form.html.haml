@@ -1,0 +1,6 @@
+= render partial: "header"
+.search-form
+  = search_form_for(@q, url:search_result_reviews_path) do |f|
+    = f.label :name, "Keyword", class: "search-form__label"
+    = f.search_field :name_or_text_or_address_cont, class: "search-form__field"
+    = f.submit "検索", class: "search-form__submit"
