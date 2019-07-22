@@ -68,3 +68,4 @@ gem 'dotenv-rails'
 gem "carrierwave"
 gem 'mini_magick'
 gem 'pry-byebug'
+gem 'ransack'

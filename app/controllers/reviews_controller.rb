@@ -57,6 +57,16 @@ class ReviewsController < ApplicationController
     end
   end
   
+  def search
+    @q = Review.ransack(params[:q])
+    @reviews = @q.result(distinct: true)
+  end
+
+  def search_result
+    @q = Review.search(search_params)
+    @reviews = @q.result(distinct: true)
+  end
+  
   private
   def review_params
     params.require(:review).permit(
@@ -66,6 +76,10 @@ class ReviewsController < ApplicationController
     :latitude,
     :address,
     images_attributes:[:image]).merge(user_id: current_user.id)
+  end
+
+  def search_params
+    params.require(:q).permit!
   end
 
   def set_review

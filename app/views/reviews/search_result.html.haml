@@ -1,0 +1,23 @@
+= render partial: "search-form"
+.search-sort
+  = sort_link(@q, :name, "タイトル順", class: "search-sort__content")
+  = sort_link(@q, :text, "text", class: "search-sort__content")
+  = sort_link(@q, :address, "address", class: "search-sort__content")
+.search-result
+  - @reviews.each do |review|
+    .search-result__content
+      .search-result__content__name
+        .search-result__content__name__box
+          = review.name
+      .search-result__content__image
+        = image_tag (review.images.first&.image.url),class:"search-result__content__image__box"
+      .search-result__content__text
+        .search-result__content__text__logo
+          text
+        .search-result__content__text__box
+          = review.text
+      .search-result__content__address
+        .search-result__content__address__logo
+          address
+        .search-result__content__address__box
+          = review.address
