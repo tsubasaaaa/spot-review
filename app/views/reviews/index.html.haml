@@ -18,8 +18,12 @@
       新着レビュー
     .main__content2__list
       - @reviews.each do |review|
-        .main__content2__list__one
+        = link_to review_path(review),class: "main__content2__list__one" do
           .main__content2__list__one__name
             = review.name
+          .main__content2__list__one__like
+            %i.fas.fa-heart{id: "no-click-like"}
+            = review.likes.count
           .main__content2__list__one__image
+            = image_tag review.images.first&.image.url,class: "main__content2__list__one__image__display"
 = render partial: "footer"

@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy] 
 
   def index
-    @reviews = Review.all
+    @reviews = Review.all.order(created_at: :desc).limit(4)
   end
 
   def new

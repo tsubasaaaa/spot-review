@@ -141,14 +141,40 @@ html,body {
       display: flex;
       justify-content: center;
       &__one{
-        height: 350px;
+        height: 300px;
         width: 20%;
         margin-left: 10px;
         border: 6px solid;
         border-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
         border-image-slice: 1;
+        text-decoration: none;
+        color: black;
         &__name{
           text-align: center;
+          height: 25px;
+        }
+        &__like{
+          height: 25px;
+          float: right;
+          margin-right: 10px;
+          #no-click-like{
+            color: #fc00ff;
+          }
+        }
+        &__image{
+          clear: both;
+          &__display{
+            display: block;
+            min-height: 220px;
+            max-height: 244px;
+            min-width: 240px;
+            max-width: 270px;
+            text-align: center;
+            margin: 10px auto;
+            background-color: cornsilk;
+            border: solid 2px rgb(255, 220, 253);
+            border-radius: 4px;
+          }
         }
       }
     }

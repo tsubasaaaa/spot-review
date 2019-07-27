@@ -9,6 +9,26 @@
       text-align: center;
       margin: 0 auto;
     }
+    &__like{
+      &__no-click{
+        text-decoration: none;
+        #no-click-like{
+          color: #fc00ff;
+        }
+      }
+      &__create{
+        text-decoration: none;
+        #click-like{
+          color: #fc00ff;
+        }
+      }
+      &__delete{
+        text-decoration: none;
+        #click-like{
+          color: #fc00ff;
+        }
+      }
+    }
     &__time{
       height: 30px;
       float: right;
