@@ -1,7 +1,7 @@
 $(function(){
   function buildunlikesbox(json){
     var html = `<a class="review-show__content__like__delete" href="" data-id=${json.id}>
-                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-heart" id="click-like"></i>
                   <span>${json.count}</span>
                 </a>`
     $(".review-show__content__like").html(html);
@@ -9,7 +9,7 @@ $(function(){
   }
   function buildlikesbox(json){
     var html = `<a class="review-show__content__like__create" href="" data-id=${json.id}>
-                  <i class="far fa-heart"></i>
+                  <i class="far fa-heart" id="click-like"></i>
                   <span>${json.count}</span>
                 </a>`
     $(".review-show__content__like").html(html);

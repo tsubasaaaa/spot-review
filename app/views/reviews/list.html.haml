@@ -9,6 +9,10 @@
           .review-list__field__list__content__name
             = review.name
           .review-list__field__list__content__like
-            %i.far.fa-heart
+            %i.fas.fa-heart{id: "no-click-like"}
+            = review.likes.count
           .review-list__field__list__content__image
+            = image_tag review.images.first&.image.url,class: "review-list__field__list__content__image__display"
+          .review-list__field__list__content__address
+            = review.address
 = render partial: "footer"

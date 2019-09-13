@@ -35,8 +35,27 @@
     }
     &__image{
       clear: both;
-      height: 200px;
-      background-color: aquamarine;
+      max-height: 320px;
+      width: 832px;
+      display: flex;
+      justify-content: center;
+      &__box{
+        display: inline-block;
+        width: 180px;
+        height: 180px;
+        margin: 0 10px 50px;
+        border: solid 2px #FFC107;
+        border-radius: 4px;
+        &__display{
+          height: 125px;
+          width: 160px;
+          text-align: center;
+          margin: 10px 8px;
+          background-color: cornsilk;
+          border: solid 2px rgb(255, 220, 253);
+          border-radius: 4px;
+        }
+      }
     }
     &__text{
       height: 200px;

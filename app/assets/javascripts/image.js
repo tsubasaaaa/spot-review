@@ -41,6 +41,9 @@ $(function() {
           }else{
             $('.review-post__box__image__btn').css("display", "none");
           }
+          if($(".review-post__box__image__box__content").length === 4){
+            $('.review-post__box__image__btn').css("display", "none");
+          }
         };
       })(file);
     file_reader.readAsDataURL(file);

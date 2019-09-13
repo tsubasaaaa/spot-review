@@ -11,23 +11,34 @@
       border-radius: 50%;
       border: solid #e5033e;
       margin: 0 auto;
+      &__display{
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+      }
     }
     &__content1{
       height: 100px;
-      width: 100%;
+      width: 600px;
+      margin: 0 auto;
       &__nickname{
         height: 100px;
-        width: 600px;
+        width: 300px;
         float: left;
       }
       &__like{
         height: 50px;
-        width: 100px;
+        width: 110px;
         float: right;
+        #no-click-like{
+          color: #fc00ff;
+        }
       }
     }
     &__content2{
       height: 200px;
+      width: 600px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       line-height: 30px;

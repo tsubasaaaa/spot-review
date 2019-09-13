@@ -3,7 +3,8 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy] 
 
   def index
-    @reviews = Review.all.order(created_at: :desc).limit(4)
+    @rankings = Review.order(likes_count: :desc).limit(4)
+    @reviews = Review.order(created_at: :desc).limit(4)
   end
 
   def new
@@ -32,7 +33,7 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    if @review.update(edit_params)
+    if @review.update(review_params)
       if params[:images].present?
         params[:images].each do |i|
           @image = @review.images.create(image: i)
@@ -40,8 +41,10 @@ class ReviewsController < ApplicationController
       end
       if params[:delete].present?
         params[:delete].each do |i|
-          @image = Image.find(i)
-          @image.delete
+          if i != ""
+            @image = Image.find(i)
+            @image.delete
+          end
         end
       end
       redirect_to review_path(@review)

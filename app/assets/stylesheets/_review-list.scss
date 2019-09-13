@@ -21,17 +21,34 @@
         border: 6px solid;
         border-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
         border-image-slice: 1;
+        text-decoration: none;
+        color: black;
         &__name{
-          float: left;
+          text-align: center;
+          height: 25px;
         }
         &__like{
           float: right;
+          height: 25px;
+          margin-right: 10px;
+          #no-click-like{
+            color: #fc00ff;
+          }
         }
         &__image{
           clear: both;
-          height: 280px;
-          width: 285px;
-          background-color: black;
+          &__display{
+            display: block;
+            min-height: 220px;
+            max-height: 244px;
+            min-width: 240px;
+            max-width: 270px;
+            text-align: center;
+            margin: 10px auto;
+            background-color: cornsilk;
+            border: solid 2px rgb(255, 220, 253);
+            border-radius: 4px;
+          }
         }
       }
     }

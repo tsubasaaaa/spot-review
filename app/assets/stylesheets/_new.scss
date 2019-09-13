@@ -43,8 +43,9 @@
       &__box{
         max-height: 320px;
         width: 832px;
+        display: flex;
+        justify-content: center;
         &__content{
-          display: inline-block;
           width: 180px;
           height: 210px;
           margin: 0 10px 50px;
