@@ -3,12 +3,16 @@
   = sort_link(@q, :name, "タイトル順", class: "search-sort__content")
   = sort_link(@q, :text, "text", class: "search-sort__content")
   = sort_link(@q, :address, "address", class: "search-sort__content")
+  = sort_link(@q, :likes_count, "いいね順", class: "search-sort__content")
 .search-result
   - @reviews.each do |review|
-    .search-result__content
+    = link_to review_path(review), class: "search-result__content" do
       .search-result__content__name
         .search-result__content__name__box
           = review.name
+      .search-result__content__like
+        %i.fas.fa-heart{id: "no-click-like"}
+        = review.likes_count
       .search-result__content__image
         = image_tag (review.images.first&.image.url),class:"search-result__content__image__box"
       .search-result__content__text

@@ -1,12 +1,15 @@
+= render partial: "reviews/header"
 .mypage
   .mypage__field
     .mypage__field__image
+      = image_tag 'profile.jpeg', class: "mypage__field__image__display"
     .mypage__field__content1
       .mypage__field__content1__nickname
-        nickname
+        = @user.nickname
       .mypage__field__content1__like
         トータル
-        %i.far.fa-heart
+        %i.fas.fa-heart{id: "no-click-like"}
+        = @total
     .mypage__field__content2
       = link_to list_reviews_path,class: "mypage__field__content2__list" do
         %i.fas.fa-list
@@ -16,4 +19,5 @@
         いいね！した一覧
       .mypage__field__content2__configuration
         %i.fas.fa-cog
-        設定
+        プロフィール編集
+= render partial: "reviews/footer"

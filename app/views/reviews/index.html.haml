@@ -4,15 +4,17 @@
     .main__content1__rogo
       Ranking
     .main__content1__list
-      .main__content1__list__one
-        .main__content1__list__one__name
-          na
-        .main__content1__list__one__like
-          %i.far.fa-heart
-        .main__content1__list__one__image
-      .main__content1__list__one
-      .main__content1__list__one
-      .main__content1__list__one
+      - @rankings.each do |ranking|
+        = link_to review_path(ranking),class: "main__content1__list__one" do
+          .main__content1__list__one__name
+            = ranking.name
+          .main__content1__list__one__like
+            %i.fas.fa-heart{id: "no-click-like"}
+            = ranking.likes.count
+          .main__content1__list__one__image
+            = image_tag ranking.images.first&.image.url,class: "main__content1__list__one__image__display"
+          .main__content1__list__one__address
+            = ranking.address
   .main__content2
     .main__content2__rogo
       新着レビュー
@@ -26,4 +28,6 @@
             = review.likes.count
           .main__content2__list__one__image
             = image_tag review.images.first&.image.url,class: "main__content2__list__one__image__display"
+          .main__content2__list__one__address
+            = review.address
 = render partial: "footer"

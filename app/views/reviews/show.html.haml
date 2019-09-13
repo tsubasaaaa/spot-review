@@ -1,5 +1,5 @@
 = render partial: "header"
-.review-edit
+.review-show
   .review-show__content
     .review-show__content__name
       = @review.name
@@ -20,6 +20,9 @@
     .review-show__content__time
       = @review.created_at.strftime("%Y-%m-%d %H:%M")
     .review-show__content__image
+      - @review.images.each do |image|
+        .review-show__content__image__box
+          = image_tag image.image.url, class: "review-show__content__image__box__display"
     .review-show__content__text
       = @review.text
     .review-show__content__address
@@ -39,3 +42,4 @@
         -# = link_to
         -# 戻るリンク
         -# ユーザーのプロフィールページへ飛ぶリンク
+
