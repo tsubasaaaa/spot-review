@@ -1,0 +1,38 @@
+= render partial: "reviews/header"
+.other
+  .other__field
+    .other__field__image
+      - if @user.image.present?
+      - else
+        = image_tag 'profile.jpeg', class: "other__field__image__display"
+    .other__field__content1
+      .other__field__content1__nickname
+        = @user.nickname
+      .other__field__content1__like
+        トータルイイね数
+        %i.fas.fa-heart{id: "no-click-like"}
+        = @total
+      .other__field__content1__follow
+        - if @user.id == current_user.id
+        - else
+          - if current_user.relationships.find_by(follow_id: @user.id)
+            %a.other__field__content1__follow__unfollow{href: "", data: {id: @user.id, count: @follower.count}}
+              フォロー解除
+          - else
+            %a.other__field__content1__follow__btn{href: "" , data: {id: @user.id, count: @folower.count}}
+              フォローする
+    .other__field__content2
+      = link_to list_review_path(@user.id),class: "other__field__content2__list" do
+        %i.fas.fa-list
+        レビュー一覧
+      .other__field__content2__follow
+        フォロー
+        = @follow.count
+      .other__field__content2__followers
+        フォロワー
+        .other__field__content2__followers__count
+          = @follower.count
+      .other__field__content2__like-list
+        %i.far.fa-heart
+        いいね！した一覧
+= render partial: "reviews/footer"
