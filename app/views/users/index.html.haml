@@ -11,7 +11,7 @@
         %i.fas.fa-heart{id: "no-click-like"}
         = @total
     .mypage__field__content2
-      = link_to list_reviews_path,class: "mypage__field__content2__list" do
+      = link_to list_review_path(@user.id),class: "mypage__field__content2__list" do
         %i.fas.fa-list
         レビュー一覧
       .mypage__field__content2__like-list

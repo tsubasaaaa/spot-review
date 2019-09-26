@@ -22,10 +22,17 @@ class ReviewsController < ApplicationController
   end
 
   def list
-    @reviews = Review.where(user_id: current_user.id)
+    @reviews = Review.where(user_id: params[:id])
   end
 
   def show
+    @user = User.find(@review.user_id)
+  end
+
+  def like_list
+    @user = User.find(params[:id])
+    @likes = Rike.where(user_id: @user.id)
+    @review = Review.where(id: @likes.review_id)
   end
 
   def edit

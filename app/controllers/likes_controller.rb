@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-
+  
   def create
     like = current_user.likes.new(review_id: params[:id])
     like.save
@@ -7,7 +7,6 @@ class LikesController < ApplicationController
     count = @review.likes.count
     id = params[:id]
     @json = [count,id]
-    # binding.pry
     respond_to do |format|
       format.html
       format.json

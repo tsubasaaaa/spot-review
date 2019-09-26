@@ -1,8 +1,15 @@
 = render partial: "header"
 .review-show
   .review-show__content
+    =link_to user_path(@user.id), class: "review-show__content__user" do
+      .review-show__content__user__image
+      .review-show__content__user__name
+        = @user.nickname
     .review-show__content__name
-      = @review.name
+      .review-show__content__name__explanation
+        title
+      .review-show__content__name__title
+        = @review.name
     .review-show__content__like
       - if @review.user_id == current_user.id
         .review-show__content__like__no-click
@@ -24,9 +31,15 @@
         .review-show__content__image__box
           = image_tag image.image.url, class: "review-show__content__image__box__display"
     .review-show__content__text
-      = @review.text
+      .review-show__content__text__explanation
+        text
+      .review-show__content__text__text
+        = @review.text
     .review-show__content__address
-      = @review.address
+      .review-show__content__address__explanation
+        address
+      .review-show__content__address__address
+        = @review.address
     .review-show__content__map
       %a.show-edit__content__map__btn{href: "",data: {lat: @review.latitude,long: @review.longitude}}地図を表示
       .show-edit__content__map__box

@@ -11,13 +11,22 @@ Rails.application.routes.draw do
   root 'reviews#index'
   # root 'users#index'
   resources :reviews do
-    collection do
+
+    member do
       get 'list'
+    end
+
+    collection do
       get 'search'
       get 'search-result'
     end
+    
   end
-  resources :users
+
+  resources :users, only:[:index, :show]
+
+  resources :relationships, only:[:create, :destroy]
 
   resources :likes, only:[:create,:destroy]
+
 end
