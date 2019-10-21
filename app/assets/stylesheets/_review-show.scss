@@ -4,6 +4,26 @@
   &__content{
     width: 800px;
     margin: 50px auto 0;
+    &__user{
+      display: flex;
+      margin-bottom: 10px;
+      text-decoration: none;
+      &__image{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        border: solid 1px rgb(255, 220, 253);
+        &__noimage{
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+        }
+      }
+      &__name{
+        margin-left: 10px;
+        line-height: 50px;
+      }
+    }
     &__name{
       height: 50px;
       width: 100%;
