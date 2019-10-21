@@ -3,6 +3,9 @@
   .review-show__content
     =link_to user_path(@user.id), class: "review-show__content__user" do
       .review-show__content__user__image
+        - if @user.image.present?
+        - else
+          = image_tag 'profile.jpeg', class: "review-show__content__user__image__noimage"
       .review-show__content__user__name
         = @user.nickname
     .review-show__content__name
@@ -45,7 +48,7 @@
       .show-edit__content__map__box
     .review-show__content__btn
       - if @review.user_id == current_user.id
-        = link_to list_reviews_path,class: "review-show__content__btn__return" do
+        = link_to list_review_path(@user),class: "review-show__content__btn__return" do
           一覧へ戻る
         = link_to edit_review_path(@review),class: "review-show__content__btn__edit" do
           編集をする

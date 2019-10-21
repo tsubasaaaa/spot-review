@@ -2,22 +2,28 @@
 .mypage
   .mypage__field
     .mypage__field__image
-      = image_tag 'profile.jpeg', class: "mypage__field__image__display"
+      - if @user.image.present?
+      - else
+        = image_tag 'profile.jpeg', class: "mypage__field__image__display"
     .mypage__field__content1
       .mypage__field__content1__nickname
         = @user.nickname
       .mypage__field__content1__like
-        トータル
+        トータルイイね数
         %i.fas.fa-heart{id: "no-click-like"}
         = @total
     .mypage__field__content2
       = link_to list_review_path(@user.id),class: "mypage__field__content2__list" do
         %i.fas.fa-list
         レビュー一覧
+      .mypage__field__content2__follow
+        フォロー
+        = @follow.count
+      .mypage__field__content2__followers
+        フォロワー
+        .mypage__field__content2__followers__count
+          = @follower.count
       .mypage__field__content2__like-list
         %i.far.fa-heart
         いいね！した一覧
-      .mypage__field__content2__configuration
-        %i.fas.fa-cog
-        プロフィール編集
 = render partial: "reviews/footer"
